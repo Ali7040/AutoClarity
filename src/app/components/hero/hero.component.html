@@ -1,0 +1,45 @@
+<section class="bg-gradient-to-r from-primary to bg-green-400 ">
+    <div class="container-lg">
+        <div class="grid grid-cols-1 md:grid-cols-2 place-items-center min-h-[600px] 
+        text-white">
+            <!-- text section -->
+             <div [@textBounceIn] *ngIf="isVisible">
+                <h1 class="text-4xl lg:text-6xl uppercase text-transparent text-outline">Explore the Evolution of Your Next Car</h1>
+                <p class="my-2 text-lg font-medium">Obtain a report to find out if your car is safe, to sell more quickly, or to avoid poor transactions.</p>
+                <div class="relative my-3">
+                    <div class="absolute inset-y-0 start-0 bg-secondary flex items-center ps-3 pr-2 pointer-events-none rounded-tl-xl rounded-bl-xl">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 stroke-white transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 4l6 16 6-16" />
+                      </svg>
+                    </div>
+                    <input type="text" id="search" class="outline-none block w-4/5 p-3 ps-10 font-bold text-5xl text-primary border border-gray-300 rounded-full bg-gray-50 focus:ring-green-700 focus:border-green-700" placeholder="Enter VIN Number" required />
+                    <button type="submit" class="text-white absolute end-2.5 bottom-[13px] bg-secondary hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-4">Continue</button>
+                </div>
+                <button class="relative my-2 group overflow-hidden px-6 h-12 rounded-full flex space-x-2 items-center bg-gradient-to-r from-secondary to-slate-900 hover:to-slate-700">
+                    <span class="relative text-sm text-white">I don't have VIN</span>
+                    <div class="flex items-center -space-x-3 translate-x-3">
+                      <div class="w-2.5 h-[1.6px] rounded bg-white origin-left scale-x-0 transition duration-300 group-hover:scale-x-100"></div>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-white -translate-x-2 transition duration-300 group-hover:translate-x-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </button>
+                <p class="my-2">Vispy can provide you with information regarding</p>        
+                <span class="bg-secondary text-white cursor-pointer text-xs font-medium me-2 px-2.5 py-0.5 rounded-full">Damages</span>
+                <span class="bg-secondary text-white cursor-pointer text-xs font-medium me-2 px-2.5 py-0.5 rounded-full">Mileage rollbacks</span>
+                <span class="bg-secondary text-white cursor-pointer text-xs font-medium me-2 px-2.5 py-0.5 rounded-full ">Specs & equipment</span>
+                <span class="bg-secondary text-white cursor-pointer text-xs font-medium me-2 px-2.5 py-0.5 rounded-full">Title check</span>
+                <span class="bg-secondary text-white cursor-pointer text-xs font-medium me-2 px-2.5 py-0.5 rounded-full">Safety</span>
+        
+             </div>
+             <!-- hero image sectcion -->
+             <div [@carDriveIn] *ngIf="isVisible">
+                <img src="assets/images/hero_img.png" alt="vispy main img">
+             </div>
+        </div>
+    </div>
+</section>
+
+
+
+

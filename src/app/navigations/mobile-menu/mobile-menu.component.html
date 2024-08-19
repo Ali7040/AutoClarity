@@ -1,0 +1,174 @@
+<nav
+class="mobile_menu fixed inset-y-0 left-0 z-40 bg-white shadow-lg transition-transform transform -translate-x-full lg:hidden"
+[ngClass]="{'-translate-x-full': !isMobileMenuVisible, 'translate-x-0': isMobileMenuVisible}"
+>
+<div class="flex justify-between items-center p-4 border-b-2">
+  <a routerLink="/" class="logo_wrapper">
+    <img class="w-24" src="assets/images/logo_png.png" alt="Vispy" />
+  </a>
+  <button (click)="toggleMobileMenu()" class="text-gray-600">
+    <svg
+      class="w-6 h-6"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 18L18 6M6 6l12 12"
+      ></path>
+    </svg>
+  </button>
+</div>
+<!-- mobile-menu.component.html -->
+<ul class="menu_items flex flex-col p-4 space-y-2 overflow-y-auto h-4/5">
+    <li class="relative">
+        <a routerLink="/" class="flex items-center text-md font-semibold hover:text-primary">
+            <ng-icon name="heroHome" class="w-5 h-5 mr-2"></ng-icon>
+            Home
+        </a>
+    </li>
+    <li class="relative">
+        <a href="#" (click)="toggleChildMenu('reports')" class="flex items-center justify-between text-md font-semibold hover:text-green-600">
+            <span class="flex items-center">
+                <ng-icon name="heroChartBar" class="w-5 h-5 mr-2"></ng-icon>
+            Reports
+            </span>
+            <svg class="w-4 h-4 transform transition duration-200" [ngClass]="{'rotate-180': isChildMenuOpen('reports')}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </a>
+        <ul *ngIf="isChildMenuOpen('reports')" class="child_menu pl-7 mt-1 space-y-1">
+            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sample Report</a></li>
+            <li><a routerLink="/pricing" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pricing</a></li>
+            <li><a routerLink="/advantages" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Advantages</a></li>
+            <li><a routerLink="/termination" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Termination</a></li>
+            <li><a routerLink="/notice" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Notice</a></li>
+            <li><a routerLink="/loading" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Loading</a></li>
+        </ul>
+    </li>
+    <li class="relative">
+        <a href="#" (click)="toggleChildMenu('services')" class="flex items-center justify-between text-md font-semibold hover:text-green-600">
+            <span class="flex items-center">
+                <ng-icon name="heroCheck" class="w-5 h-5 mr-2"></ng-icon>
+            Services
+            </span>
+            <svg class="w-4 h-4 transform transition duration-200" [ngClass]="{'rotate-180': isChildMenuOpen('reports')}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </a>
+        <ul *ngIf="isChildMenuOpen('services')" class="child_menu pl-7 mt-1 space-y-1">
+            <li><a routerLink="/services" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Comprehensive Vehicle History Reports</a></li>
+            <li><a routerLink="/services" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Advanced Safety Analysis</a></li>
+            <li><a routerLink="/services" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Market Value Assessment</a></li>
+            <li><a routerLink="/services" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pre-Sale Vehicle Inspection</a></li>
+            <li><a routerLink="/services" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Title and Lien Verification</a></li>
+        </ul>
+    </li>
+    <li class="relative">
+        <a href="#" (click)="toggleChildMenu('resources')" class="flex items-center justify-between text-md font-semibold hover:text-green-600">
+            <span class="flex items-center">
+                <ng-icon name="heroNewspaper" class="w-5 h-5 mr-2"></ng-icon>
+                Resources
+            </span>
+            <svg class="w-4 h-4 transform transition duration-200" [ngClass]="{'rotate-180': isChildMenuOpen('reports')}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </a>
+        <ul *ngIf="isChildMenuOpen('resources')" class="child_menu pl-7 mt-1 space-y-1">
+            <li><a routerLink="/contact-us" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Get Support</a></li>
+            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Case Studies</a></li>
+            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Guides</a></li>
+            <li><a routerLink="/blogs-articles" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Blogs</a></li>
+            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">News &amp; Events</a></li>
+        </ul>
+    </li>
+    <li class="relative">
+        <a routerLink="/business" (click)="toggleChildMenu('forbusiness')" class="flex items-center justify-between text-md font-semibold hover:text-green-600">
+            <span class="flex items-center">
+                <ng-icon name="heroClipboardDocumentList" class="w-5 h-5 mr-2"></ng-icon>
+                For Business
+            </span>
+            <svg class="w-4 h-4 transform transition duration-200" [ngClass]="{'rotate-180': isChildMenuOpen('reports')}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </a>
+        <ul *ngIf="isChildMenuOpen('forbusiness')" class="child_menu pl-7 mt-1 space-y-1">
+            <li><a routerLink="/business" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dealerships</a></li>
+            <li><a routerLink="/business" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Insurance Companies</a></li>
+            <li><a routerLink="/business" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Leasing Companies</a></li>
+            <li><a routerLink="/business" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Affiliate Program</a></li>
+            <li><a routerLink="/business" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">B2B Pricing</a></li>
+            <li><a routerLink="/comparative" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Comparative</a></li>
+        </ul>
+    </li>
+    <li class="relative">
+        <a href="#" (click)="toggleChildMenu('company')" class="flex items-center justify-between text-md font-semibold hover:text-green-600">
+            <span class="flex items-center">
+                <ng-icon name="heroBuildingOffice" class="w-5 h-5 mr-2"></ng-icon>
+                Company
+            </span>
+            <svg class="w-4 h-4 transform transition duration-200" [ngClass]="{'rotate-180': isChildMenuOpen('reports')}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </a>
+        <ul *ngIf="isChildMenuOpen('company')" class="child_menu pl-7 mt-1 space-y-1">
+            <li><a routerLink="/company" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">For Company</a></li>
+            <li><a routerLink="/about-us" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">About us</a></li>
+            <li><a routerLink="/contact-us" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Contacts</a></li>
+            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Press Area</a></li>
+            <li><a routerLink="/faqs" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">FAQs</a></li>
+            <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Career</a></li>
+            <li><a routerLink="/our-mission" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Our Mission</a></li>
+        </ul>
+    </li>
+    <li class="relative flex items-center justify-center my-4">
+        <img class="w-16 opacity-55" src="assets/images/logo_png.png" alt="Vispy" />
+    </li>
+</ul>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-white shadow-inner">
+  <ul class="flex justify-around">
+    <li>
+      <a href="#" class="rounded-full px-4 py-2 font-semibold bg-white bg-opacity-10 flex items-center group">
+        <span class="mr-2 font-bold whitespace-nowrap hover:text-primary">Sign In</span>
+        <svg
+          class="stroke-current"
+          stroke="currentColor"
+          width="10"
+          height="10"
+          stroke-width="2"
+          viewBox="0 0 10 10"
+          aria-hidden="true"
+        >
+          <g fill-rule="evenodd">
+            <path class="opacity-0 group-hover:opacity-100 transition ease-in-out duration-200" d="M0 5h7"></path>
+            <path
+              class="opacity-100 group-hover:transform group-hover:translate-x-1 transition ease-in-out duration-200"
+              d="M1 1l4 4-4 4"
+            ></path>
+          </g>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <app-button
+        [buttonText]="'Sign Up'"
+        [buttonType]="'button'"
+        [buttonColor]="'bg-primary'"
+        [hoverColor]="'hover:bg-green-800'"
+        [ringColor]="'focus:ring-green-300'"
+        [width]="'130px'"
+        [height]="'40px'"
+        [borderRadius]="'1.5rem'"
+        [iconName]="'heroUserPlus'"
+        [iconClass]="'font-bold text-lg'"
+        [iconPosition]="'left'"
+        (buttonClick)="onSignUpClick($event)"
+      ></app-button>
+    </li>
+  </ul>
+</div>
+</nav>

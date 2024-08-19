@@ -1,0 +1,66 @@
+@import "./var.scss";
+
+.container {
+  padding-left: var(--padding-gutter);
+  padding-right: var(--padding-gutter);
+
+  @screen lg {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: theme('screens.lg');
+    width: 100%;
+  }
+}
+.container-lg {
+  padding-left: var(--padding-gutter);
+  padding-right: var(--padding-gutter);
+
+  @screen md {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: theme('screens.md');
+    width: 100%;
+  }
+  @screen lg {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: theme('screens.xl');
+    width: 100%;
+  }
+  @screen xl {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: theme('screens.xl');
+    width: 100%;
+  }
+}
+
+.card {
+  @apply rounded shadow bg-base;
+}
+
+.avatar {
+  @apply h-10 w-10 object-cover rounded-full bg-hover;
+}
+
+.hidden-input {
+  @apply border-2 border-solid border-transparent py-1 px-3 rounded;
+
+  &:focus {
+    @apply border-primary outline-none;
+  }
+
+  &.empty {
+    @apply border-primary;
+  }
+}
+
+// Transitions
+
+.trans-ease-out {
+  transition: all 0.5s ease-out;
+}
+
+.trans-shadow {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -1,0 +1,18 @@
+<button 
+  type="{{ buttonType }}" 
+  (click)="handleClick($event)"
+  [ngStyle]="{'width': width, 'height': height, 'border-radius': borderRadius}"
+  class="flex items-center gap-2 focus:outline-none text-white {{ buttonColor }} {{ hoverColor }} focus:ring-4 {{ ringColor }} font-medium rounded-lg text-sm px-5 py-2.5">
+  
+  <ng-container *ngIf="iconClass && iconPosition === 'left'">
+    <ng-icon name="{{ iconName }}" class="{{iconClass}}"></ng-icon>
+  </ng-container>
+
+  {{ buttonText }}
+
+  <ng-container *ngIf="iconClass && iconPosition === 'right'">
+    <ng-icon name="{{ iconName }}" class="{{iconClass}}"></ng-icon>
+  </ng-container>
+  
+</button>
+

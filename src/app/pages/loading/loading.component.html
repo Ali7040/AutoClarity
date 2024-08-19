@@ -1,0 +1,59 @@
+@if(isLoading) {
+    <div class="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-200 via-green-300 to-green-500">
+        <div class="relative flex flex-col items-center justify-center p-10 bg-white bg-opacity-20 rounded-2xl shadow-2xl backdrop-filter backdrop-blur-3xl border border-gray-200">
+            <div class="relative loader mb-4 flex items-center justify-center">
+                <div class="loader-rings absolute inset-0 flex items-center justify-center"></div>
+                <img src="assets/images/car.svg" alt="loading" class="z-20 transform hover:scale-110 transition duration-500 ease-in-out w-20 h-20">
+                <div class="loader-pulse absolute inset-0 flex items-center justify-center"></div>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-800 animate-pulse">Searching Information</h2>
+            <p class="mt-2 text-lg text-gray-800">Scanning all the resources we have</p>
+        </div>
+    </div>
+}
+@else {
+    <div class="bg-gradient-to-r from-green-500 via-green-500 to-secondary min-h-screen flex items-center justify-center py-8 px-4">
+        <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-xl shadow-lg p-6 md:p-12 max-w-4xl mx-auto transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+            <!-- Step Progress Bar -->
+            <div class="hidden md:flex justify-between items-center mb-8">
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 bg-secondary text-white rounded-full flex items-center justify-center font-bold">
+                        1
+                    </div>
+                    <p class="text-white font-semibold">Preliminary Check</p>
+                </div>
+                <div class="h-1 w-16 bg-white"></div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 bg-gray-200 text-gray-600 rounded-full flex items-center justify-center font-bold">
+                        2
+                    </div>
+                    <p class="text-gray-200 font-semibold">Payment</p>
+                </div>
+            </div>
+    
+            <!-- Main Content -->
+            <div class="text-center">
+                <div class="mb-6">
+                    <input 
+                        type="text" 
+                        class="w-full bg-white bg-opacity-30 backdrop-blur-lg text-white placeholder-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-300"
+                        placeholder="Enter Vehicle ID (e.g., VISPY1234)"
+                    />
+                </div>
+                <h2 class="text-2xl font-bold text-red-600 mb-4">Always Verify Your Vehicle Before Purchase</h2>
+                <p class="text-gray-800 mb-8">Get all the crucial details about your vehicle in seconds with VISPY's advanced verification service.</p>
+                <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-lg p-6 text-left animate-fade-in">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">With VISPY, you get:</h3>
+                    <ul class="list-disc list-inside text-gray-800 space-y-2">
+                        <li>Ownership history, accident reports, theft records, and mileage data.</li>
+                        <li>Photos of the vehicle’s current and past conditions.</li>
+                        <li>Maintenance and service history reports.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-pricing></app-pricing>
+}
+
+

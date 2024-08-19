@@ -1,0 +1,181 @@
+// UI Core
+@import "./UI/styles/core";
+
+
+.dropdown_menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    // bottom: 0;
+    transform: translate(-50%);
+}
+
+.dropdown_menu .dropdown_arrow::before {
+    content: '';
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background: #ffffff;
+    right: 50%;
+    top: -6px;
+    transform: rotate(45deg);
+    z-index: -1;
+
+}
+.main_nav,
+.auth-nav
+ {
+    display: block;
+}
+.mobile_menu {
+    transform: translateX(-100%);
+    width: 275px; /* Set width as 75% of the viewport width */
+  }
+  
+  .mobile_menu.translate-x-0 {
+    transform: translateX(0);
+  }
+  
+  .mobile_menu .fixed {
+    /* Ensures the footer stays at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 275px;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+  }
+  
+  .logo_wrapper img {
+    width: 96px; /* Ensure logo size fits design */
+  }
+
+
+/* mobile-menu.component.css */
+.mobile_menu .menu_items {
+    padding: 0;
+    list-style: none;
+  }
+  
+.mobile_menu .menu_items li {
+    position: relative;
+  }
+  
+  .mobile_menu .menu_items a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .mobile_menu .menu_items a:hover {
+    color: #10b981; /* Tailwind's green-600 */
+  }
+  
+  .child_menu {
+    display: block; /* Hide by default */
+    padding-left: 1.75rem; /* Indent the child menu items */
+    margin-top: 0.25rem;
+  }
+  
+  .child_menu a {
+    padding: 0.5rem 1rem;
+    color: #4a5568; /* Tailwind's gray-700 */
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .child_menu a:hover {
+    background-color: #f7fafc; /* Tailwind's gray-100 */
+  }
+  
+  
+  
+
+@media screen and (max-width: 1024px) {
+    .main_nav
+    {
+        display: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .auth-nav
+    {
+        display: none;
+    }
+}
+
+
+.text-outline {
+    color: black; /* Fallback color for browsers that don't support text-stroke */
+    -webkit-text-stroke: 2px white; /* For WebKit-based browsers */
+    // text-shadow: 
+    //     2px 0 0 white, /* Horizontal and vertical shadow */
+    //    -2px 0 0 white, 
+    //     0 2px 0 white, 
+    //     0 -2px 0 white,
+    //     1px 1px white, /* Diagonal shadows */
+    //    -1px 1px white, 
+    //     1px -1px white,
+    //    -1px -1px white;
+}
+.animated-section.animate {
+    animation: bounceIn 500ms ease-out;
+  }
+
+
+  // custom radio button
+
+  .custom-radio {
+    appearance: none;
+    background-color: #f0f0f0;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.1em solid #b0b0b0;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+  }
+  
+  .custom-radio::before {
+    content: "";
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: rgba(var(--color-primary), 1);
+  }
+  
+  .custom-radio:checked::before {
+    transform: scale(1);
+  }
+  
+  .custom-radio:focus {
+    outline: max(2px, 0.15em) solid rgba(var(--color-primary), 1);
+    outline-offset: max(2px, 0.15em);
+  }
+
+  input[type="checkbox"]:checked + label > div {
+    background-color: rgba(var(--color-primary), 1); /* Green background when checked */
+    border-color: rgba(var(--color-primary), 1); /* Green border when checked */
+  }
+  
+  input[type="checkbox"]:checked + label > div > svg {
+    display: block; /* Show the checkmark icon */
+  }
+  
+  input[type="checkbox"]:checked + label > div {
+    background-color: rgba(var(--color-primary), 1);
+    border-color: rgba(var(--color-primary), 1);
+  }
+  
+  
+  
+  
+  
+
